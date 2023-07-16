@@ -60,18 +60,18 @@ def StartConversion(inputPath):
 def NewConversion(message):
     msg = message
     title = "PDFiy"
-    choices = ["Convert Another", "Exit"]
+    choices = ["Convert Another"]
     reply = buttonbox(msg, title=title, choices=choices)
-
-    if reply == "Exit":
-        sys.exit(0)
 
     if reply == "Convert Another":
         SelectImage()
 
-# Start the application with a Welcome message!
-ret_val = msgbox("Welcome to PDFiy!")
-if ret_val is None:  # User closed msgbox
-    sys.exit(0)
-else:
-    SelectImage()
+def main():
+    # Start the application with a Welcome message!
+    ret_val = msgbox("Welcome to PDFiy!")
+    if ret_val is None:  # User closed msgbox
+        sys.exit(0)
+    else:
+        SelectImage()
+
+main()
